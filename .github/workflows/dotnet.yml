@@ -1,0 +1,29 @@
+name: .NET
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.x
+    - name: Generate
+      # generate project each time to fit with dotnet-version
+      run: dotnet new classlib --output Half
+    - name: Build
+      run: dotnet build Half  --configuration Release
+    - name: Build-test
+      run: dotnet build Half.Tests --configuration Release
+    - name: Test
+      run: dotnet test Half.Tests --no-build --verbosity normal
+      # pack and publish later
