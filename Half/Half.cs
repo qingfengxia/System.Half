@@ -8,7 +8,7 @@ using System;
 using System.Diagnostics;
 using System.Globalization;
 
-namespace SystemHalf
+namespace System
 {
     /// <summary>
     /// Represents a half-precision floating point number.
@@ -896,7 +896,7 @@ namespace SystemHalf
 
 /// ================ HalfHelper.cs ====================
 
-namespace SystemHalf
+namespace System
 {
     /// <summary>
     /// Helper class for Half conversions and some low level operations.

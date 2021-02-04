@@ -5,9 +5,9 @@ using System.Threading;
 //using Envision.Evaluation.Distributions;
 using NUnit.Framework;
 
-using SystemHalf;
+//using System;
 
-namespace SystemHalf.Tests
+namespace HalfTests
 {
     [TestFixture]
     public sealed class half_tests

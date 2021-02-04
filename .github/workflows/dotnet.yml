@@ -19,7 +19,7 @@ jobs:
         dotnet-version: 3.1.x
     - name: Generate
       # generate project each time to fit with dotnet-version
-      run: dotnet new classlib --output Half
+      run: dotnet new classlib --output Half --force
     - name: Build
       run: dotnet build Half  --configuration Release
     - name: Build-test
