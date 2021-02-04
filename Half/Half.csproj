@@ -1,5 +1,16 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
+  <PropertyGroup>
+    <PackageId>Half</PackageId>
+    <Version>1.0.0-beta</Version>
+    <Authors>Ladislav Lang (2009), Joannes Vermorel (2017), packed by Qingfeng Xia (2021)</Authors>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Company>NA</Company>
+    <Description>half precision floating point number (IEEE754) binary16</Description>
+    <Summary> dotnet 5 has this System.Half bultin, so this package targets on previous version </Summary>
+    <ProjectURL>https://github.com/qingfengxia/Half</ProjectURL>
+    <RepositoryURL>https://github.com/qingfengxia/Half</RepositoryURL>
+  </PropertyGroup>
+  
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>

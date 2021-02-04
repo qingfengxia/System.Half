@@ -1,3 +1,4 @@
+https://www.nuget.org/packages/Half/
 
 ### What is half precision floating point number (binary16)
 
@@ -19,37 +20,49 @@ License header on the gist is kind of public domain, in order to have some licen
 ### dotnet 5 (Nov 2020) has built in Half type
 
 dotnet 5 (Nov 2020) has built in Half type, so this file is not needed
-https://docs.microsoft.com/en-us/dotnet/api/system.bitconverter?view=net-5.0
+
+
+https://docs.microsoft.com/en-us/dotnet/api/system.half?view=net-5.0
 
 For historical interest, I still want to use it. so I make a repo from this gist. If needed could make a nuget package to make life easier
 
+The API are similar, yet fully checked, 
 
+it is possible to change namespace from `SystemHalf`  (as in the original gist) to just `System`
 
 ### Notes on Conversion
 
-For the moment, no plan to make it API identical to dotnet 5; that may involved modifying other system source code. 
+`BitConverter.IsLittleEndian`, this depends on CPU, although most CPU are little endian in modern days
 
-C# `BitConverter`            Endianness of dotnet
+C# `BitConverter`            
 
 `Covnert.ToUint16()`
 
 https://stackoverflow.com/questions/59728656/c-sharp-16-bit-float-conversions
 
+https://docs.microsoft.com/en-us/dotnet/api/system.bitconverter?view=net-5.0
 
 ### Test with dotnet core 3.1
 
-To target on different dotnet framework, may manually edit Half.csproj file
-
+To generate project each time to fit with dotnet-version
+`dotnet new classlib --output Half  --force`
 `dotnet build Half  --configuration Release`
 `dotnet pack Half --configuration Release`
+
+To target on different dotnet framework, may manually edit Half.Tests.csproj file
 
 `dotnet build Half.Tests`
 `dotnet test Half.Tests`
 
-all past
+all passed on Ubuntu 20.04
 
 ### Package and CI
 
+`dotnet pack  -c Release` will generate the nuget package from  `Half.csproj` file
+
+
+
+Auto build package is yet done.
+
 https://devblogs.microsoft.com/dotnet/continuous-integration-workflow-template-for-net-core-desktop-apps-with-github-actions/
 
-todo:
