@@ -30,6 +30,8 @@ The API are similar, yet fully checked,
 
 it is possible to change namespace from `SystemHalf`  (as in the original gist) to just `System`
 
+The output assembly name is `System.Half.dll` to avoid conflicting with some native win32 dll with the name `Half.dll`.
+
 ### Notes on Conversion
 
 `BitConverter.IsLittleEndian`, this depends on CPU, although most CPU are little endian in modern days

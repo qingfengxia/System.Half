@@ -20,7 +20,7 @@
 
 <ItemGroup>
   <Reference Include="Half">
-    <HintPath>../Half/bin/Release/netstandard2.0/Half.dll</HintPath>
+    <HintPath>../Half/bin/Release/netstandard2.0/System.Half.dll</HintPath>
     <SpecificVersion>False</SpecificVersion> 
     <!-- You may set it to true if your dll has a specific version -->
   </Reference>

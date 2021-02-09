@@ -2,11 +2,12 @@
   <PropertyGroup>
     <PackageId>Half</PackageId>
     <Version>1.0.0-beta</Version>
+    <AssemblyName>System.Half</AssemblyName>
     <Authors>Ladislav Lang (2009), Joannes Vermorel (2017), packed by Qingfeng Xia (2021)</Authors>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Company>NA</Company>
-    <Description>half precision floating point number (IEEE754) binary16</Description>
-    <Summary> dotnet 5 has this System.Half bultin, so this package targets on previous version </Summary>
+    <Description>half precision floating point number (IEEE754) binary16 (try to be compatible with the built in System.Half in DotNet 5), see more at https://github.com/qingfengxia/Half</Description>
+    <Summary> dotnet 5 has this System.Half bultin, so this package targets on previous versions </Summary>
     <ProjectURL>https://github.com/qingfengxia/Half</ProjectURL>
     <RepositoryURL>https://github.com/qingfengxia/Half</RepositoryURL>
   </PropertyGroup>
