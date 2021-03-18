@@ -5,8 +5,6 @@ using System.Threading;
 //using Envision.Evaluation.Distributions;
 using NUnit.Framework;
 
-//using System;
-
 namespace HalfTests
 {
     [TestFixture]

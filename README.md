@@ -47,20 +47,19 @@ https://docs.microsoft.com/en-us/dotnet/api/system.bitconverter?view=net-5.0
 ### Test with dotnet core 3.1
 
 To generate project each time to fit with dotnet-version
-`dotnet new classlib --output Half  --force`
-`dotnet build Half  --configuration Release`
-`dotnet pack Half --configuration Release`
+`dotnet new classlib --output System.Half  --force`
+`dotnet build System.Half  --configuration Release`
+
 
 To target on different dotnet framework, may manually edit Half.Tests.csproj file
 
-`dotnet build Half.Tests`
-`dotnet test Half.Tests`
+`dotnet build Half.Tests && dotnet test Half.Tests`
 
 all passed on Ubuntu 20.04
 
 ### Package and CI
 
-`dotnet pack  -c Release` will generate the nuget package from  `Half.csproj` file
+`dotnet pack System.Half --configuration Release` will generate the nuget package from  `System.Half.csproj` file
 
 
 

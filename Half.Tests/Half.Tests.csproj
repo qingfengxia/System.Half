@@ -13,13 +13,13 @@
   </ItemGroup>
 
 <ItemGroup>
-    <ProjectReference Include="..\Half\Half.csproj">
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    <ProjectReference Include="..\System.Half\System.Half.csproj">
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
     </ProjectReference>
 </ItemGroup>
 
 <ItemGroup>
-  <Reference Include="Half">
+  <Reference Include="System.Half">
     <HintPath>../Half/bin/Release/netstandard2.0/System.Half.dll</HintPath>
     <SpecificVersion>False</SpecificVersion> 
     <!-- You may set it to true if your dll has a specific version -->
