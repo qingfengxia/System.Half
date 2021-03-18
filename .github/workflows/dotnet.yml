@@ -1,4 +1,15 @@
-name: .NET
+name: System.Half
+
+env:
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+  DOTNET_CLI_TELEMETRY_OPTOUT: true
+
+  # Project name to pack and publish
+  PROJECT_NAME: Half
+
+  # Official NuGet Feed settings
+  NUGET_FEED: https://api.nuget.org/v3/index.json
+  NUGET_KEY: ${{ secrets.NUGET_KEY }}
 
 on:
   push:
@@ -19,11 +30,16 @@ jobs:
         dotnet-version: 3.1.x
     - name: Generate
       # generate project each time to fit with dotnet-version
-      run: dotnet new classlib --output Half --force
+      run: dotnet new classlib --output System.Half --force
     - name: Build
-      run: dotnet build Half  --configuration Release
+      run: dotnet build System.Half  --configuration Release
     - name: Build-test
       run: dotnet build Half.Tests --configuration Release
     - name: Test
       run: dotnet test Half.Tests --no-build --verbosity normal
       # pack and publish later
+    - name: Package
+      run: `dotnet pack System.Half -c Release`
+      
+    - name: push nuget package
+      run: dotnet nuget push ./System.Half/bin/Release/*.nupkg --source $NUGET_FEED --skip-duplicate --api-key $NUGET_KEY
