@@ -39,7 +39,7 @@ jobs:
       run: dotnet test Half.Tests --no-build --verbosity normal
       # pack and publish later
     - name: Package
-      run: `dotnet pack System.Half -c Release`
+      run: dotnet pack System.Half -c Release
       
     - name: push nuget package
       run: dotnet nuget push ./System.Half/bin/Release/*.nupkg --source $NUGET_FEED --skip-duplicate --api-key $NUGET_KEY
